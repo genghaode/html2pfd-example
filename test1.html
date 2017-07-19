@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>html转pdf-不支持中文</title>
+</head>
+<body>
+	<div>123</div>
+	<p>wer</p>
+  <strong>中文</strong>
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA8UExURf////Py8uzr65CMjcS/v6KdnYmGh52YmZ6amZWRkZqWlqmkpIOBg7axsPv7+9LPzuXj49jV1MvHx766uXmrJxEAAACOSURBVBjTTY7bEsQgCEMRxIC3Wvv//7rW7s42L0zOQAjRrTa5yUl/HcmTjBegq6br7amI68uyipko//xwU4OhfFO6ObZK7s+Lagi99GB1fgMNkZgapOxEz2s90ACy8C4FPB0a0rFGXCAOJp5AihusiHOBCNvgfgJMioDV+6Rrdc9asnvVXSQ0teWyaQtEH2edBTxkty2PAAAAAElFTkSuQmCC" alt="">
+	<h2>hahaha</h2>
+  <script src="jspdf.min.js"></script>
+  <script src="html2pdf.js"></script>
+  <script type="text/javascript">
+    var pdf = new jsPDF('p','pt','a4');
+    pdf.internal.scaleFactor = 1;
+    html2pdf(document.body, pdf, function(pdf){
+      pdf.save('test1.pdf');
+    });
+  </script>
+</body>
+</html>
